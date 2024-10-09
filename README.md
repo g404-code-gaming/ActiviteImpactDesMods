@@ -1,53 +1,35 @@
 # ActiviteImpactDesMods
 
-But : Créer un mod qui ajoute une nouvelle plante comestible que les joueurs peuvent utiliser pour restaurer leur santé.
+But : Créer un mod qui ajoute un coffre que les joueurs peuvent utiliser pour récupérer tous les objets du jeu.
+
+![Chest](Images/Chest.png)
 
 ## Installation de Minetest :
 Télécharge la version la plus récente de Minetest depuis [minetest.net.](https://www.minetest.net/)
 
-## Création de la Structure du Mod :
-- Dans le répertoire "mods" de Minetest, crée un nouveau dossier nommé "simple_plant_mod".
-- À l'intérieur, crée un fichier init.lua où tu codes les fonctionnalités principales du mod.
+## Création du Dossier
+Créer ensemble le dossier chest_with_everything dans minetest/mods/.
 
-## Écrire le Code Basique :
+## Création de la Texture
+Utiliser un logiciel de dessin (GIMP, Paint.NET) pour créer une texture 32x32 px pour le coffre.
+Exposer un exemple visuel pour inspiration.
+Sauvegarder ce fichier sous chest_with_everything.png dans un sous-dossier appelé textures.
 
-```lua
--- Register a new plant
-minetest.register_node("simple_plant_mod:sweet_plant", {
-    description = "Sweet Plant",
-    drawtype = "plantlike",
-    tiles = {"sweet_plant.png"},
-    inventory_image = "sweet_plant.png",
-    wield_image = "sweet_plant.png",
-    paramtype = "light",
-    sunlight_propagates = true,
-    walkable = false,
-    selection_box = {
-        type = "fixed",
-        fixed = {-0.25, -0.5, -0.25, 0.25, 0.5, 0.25},
-    },
-    groups = {snappy=3, flammable=2},
-    can_dig = function(pos, player)
-        return true
-    end,
-    on_use = minetest.item_eat(2),
-})
+## Ajout du Script Init
+Présenter le script init.lua et en expliquer brièvement le contenu essentiel.
+Copier le script fourni dans le fichier init.lua du mod.
+[code.txt](https://github.com/user-attachments/files/17304992/code.txt)
 
--- Register crafting recipe (optional)
-minetest.register_craft({
-    type = "shapeless",
-    output = "simple_plant_mod:sweet_plant",
-    recipe = {"group:leaves"},
-})
-```
+## Ajout du Fichier de Configuration (.conf)
+Créer un fichier Mod.conf pour paramétrer quelques propriétés du mod.[Mod.conf.txt](https://github.com/user-attachments/files/17305032/Mod.conf.txt)
+Expliquer l'utilisation et les notions de base de ce fichier.
 
-## Création des Textures :
-Crée une image nommée "sweet_plant.png" qui représente ta plante. Utilise un éditeur d'images pour créer une simple texture de 16x16 px.
-Place la texture dans le dossier du mod.
+![Dossier](Images/Dossier.png)
 
-## Activer le Mod dans Minetest :
-Lance Minetest, crée un nouveau monde et assure-toi que "simple_plant_mod" est activé dans les paramètres des mods pour ce monde.
+## Test en Jeu 
+Activer le mod dans Minetest.
+Lancer le jeu et vérifier le bon fonctionnement du coffre.
 
-## Test et Amélioration :
-Connecte-toi au monde, trouve ta plante, et teste ses fonctionnalités.
-Améliore le mod en ajoutant des fonctionnalités comme croissance à partir de graines, ou effets spéciaux.
+
+
+
