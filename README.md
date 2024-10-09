@@ -1,4 +1,4 @@
-# ActiviteImpactDesMods
+# Activité Impact Des Mods
 
 But : Créer un mod qui ajoute un coffre que les joueurs peuvent utiliser pour récupérer tous les objets du jeu.
 
